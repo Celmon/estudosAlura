@@ -1,6 +1,6 @@
 # estudosAlura
 
-Repositiório destinado aos meu estudos no site Alura
+Repositório destinado aos meu estudos no site Alura
 
 ### Index
 

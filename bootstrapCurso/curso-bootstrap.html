@@ -7,8 +7,41 @@
     <title>Curso de Bootstrap</title>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-navbar" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">TopCasaFina Arquitetura</a>
+                </div>
+                <div id="collapse-navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#sobre-nos">Sobre nós</a></li>
+                        <li><a href="#nossos-projetos">Nossos projetos</a></li>
+                        <li><a href="#depoimentos">Depoimentos</a></li>
+                        <li><a href="#video">Vídeo</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- /Navbar -->
+        <div class="topcasafina-banner">
+            <h1>TopCasaFina Arquitetura</h1>
+            <p>Projetando a casa dos sonhos desde 2150.</p>
+            <button class="btn btn-primary btn-lg">Contate-nos agora</button>
+        </div>
+    </header>
+    <!-- /Header -->
     <!-- Sobre -->
-    <div class="container">
+    <div id="sobre-nos" class="container">
         <h2>Sobre nós</h2>
         <img src="img/sobre.jpg" alt="Imagem sobre a empresa" class="img-responsive">
     </div>
@@ -56,7 +89,7 @@
     </div>
     <!-- /"Separador" -->
     <!-- Projetos -->
-    <section class="container">
+    <section id="nossos-projetos" class="container">
         <h2>Nossos Projetos</h2>
         <figure class="thumbnail">
             <img src="img/casa.jpg" alt="Foto da Casa">
@@ -103,7 +136,7 @@
     </section>
     <!-- Projetos -->
     <!-- Depoimentos -->
-    <section>
+    <section id="depoimentos">
         <h3 class="titulo-depoimentos container">Depoimentos de Clientes</h3>
         <!-- Carousel -->
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -154,7 +187,7 @@
     </section>
     <!-- /Depoimentos -->
     <!-- Vídeo -->
-    <div class="container">
+    <div id="video" class="container">
         <h2>Vídeo Institucional</h2>
         <div class="embed-responsive embed-responsive-16by9">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/uNjny3_HaxA" frameborder="0" allowfullscreen></iframe>
@@ -162,7 +195,7 @@
     </div>
     <!-- /Vídeo -->
     <!-- Contato -->
-    <section class="container">
+    <section id="contato" class="container">
         <h2>Contato</h2>
         <p>Entre em contato conosco</p>
         <form action="">
@@ -191,15 +224,29 @@
                     </label>
                 </div>
             </div><!--
-            --><select class="form-control contato-select">
+        --><select class="form-control contato-select">
                 <option disabled selected>Tipo de Situação</option>
                 <option value="">Casa</option>
                 <option value="">Apartamento</option>
                 <option value="">Mansão</option>
             </select>
+            <button type="submit" name="button" class="btn btn-primary">Enviar</button>
         </form>
     </section>
     <!-- /Contato -->
+    <!-- Footer -->
+    <footer>
+        <address class="">
+            <strong>Top Casa Fina</strong><br>
+            Rua Sem fim, 544<br>
+            Toureiro, MG<br>
+            Telefone: +55 (21) 0800-9090<br>
+        </address>
+        <adress>
+            E-mail: contato@topcasafina.com.br
+        </adress>
+    </footer>
+    <!-- /Footer -->
 
     <script src="js/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>

@@ -1,3 +1,28 @@
+html,
+body{
+    height:100%;
+}
+header{
+    background-image: url("../img/fundo-header.jpg");
+    background-repeat:no-repeat;
+    height:100%;
+    position:relative;
+}
+header h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.topcasafina-banner{
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding:20px;
+    width: 80%;
+    border-radius:8px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+}
 #paineis-sobre{
     padding-top:20px;
     padding-bottom:20px;
@@ -14,6 +39,12 @@
     width: 50%;
     vertical-align: middle;
 }
-.grupo-radio .radio:first-child {
-    
+footer{
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    margin-top:20px;
+}
+footer adress:last-child{
+    margin-bottom:20px;
 }
