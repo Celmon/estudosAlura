@@ -5,6 +5,7 @@ body{
 header{
     background-image: url("../img/fundo-header.jpg");
     background-repeat:no-repeat;
+    background-size: cover;
     height:100%;
     position:relative;
 }
@@ -23,12 +24,19 @@ header h1 {
     left:50%;
     transform:translate(-50%, -50%);
 }
+@media(min-width: 992px){
+    .topcasafina-banner{
+        width:50%;
+    }
+}
 #paineis-sobre{
     padding-top:20px;
     padding-bottom:20px;
 }
-.titulo-depoimentos {
+#depoimentos{
     background-color:#452;
+}
+.titulo-depoimentos {
     padding-top:25px;
     padding-bottom:25px;
     color:#fff;
