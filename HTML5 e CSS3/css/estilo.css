@@ -1,0 +1,79 @@
+body,
+html {
+    height:100%;
+    margin: 0;
+    padding: 0;
+}
+.head {
+    height:200px;
+    background-color: silver;
+}
+.sobre {
+    height: 600px;
+    background-color: darkgreen;
+}
+.efeito {
+    height: 300px;
+    background-color: gold;
+    background-image: linear-gradient(135deg, transparent, transparent 14px, rgba(0,0,0,.1) 14px, rgba(0,0,0,.1) 15px, transparent 15px, transparent);
+    background-size: 20px 20px;
+    background-attachment: fixed;
+}
+.teste {
+    width: 600px;
+    height: 400px;
+    background-color: white;
+    border-radius: 7px;
+    position: absolute;
+    top: calc(50vh - 200px);
+    left: calc(50vw - 300px);
+    -webkit-animation: aparece .5s;
+       -moz-animation: aparece .5s;
+            animation: aparece .5s;
+}
+@-webkit-keyframes aparece {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes aparece {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes aparece {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.flexteste {
+    height: 500px;
+    background-color: lightyellow;
+}
+.container {
+    width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: calc(25vh - 150px);
+}
+.item {
+    display: flex;
+    margin-right: 10px;
+    height: 300px;
+    flex: 1;
+    background-color: lightgray;
+}
+.container :nth-child(2) {
+    flex: 2;
+}
