@@ -53,7 +53,7 @@ gulp.task('server', function(){
     browserSync.init({
 
         server: {
-            baseDir: 'src'
+            baseDir: 'HTML+CSS+JavaScript'
         }
     });
 
@@ -78,5 +78,5 @@ gulp.task('server', function(){
             .pipe(gulp.dest('src/css'));
     });
 
-    gulp.watch('src/**/*').on('change', browserSync.reload);
+    gulp.watch('HTML+CSS+JavaScript/**/*').on('change', browserSync.reload);
 });
