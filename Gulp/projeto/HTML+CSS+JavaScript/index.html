@@ -5,18 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ceep</title>
-    <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/n-card.css">
 </head>
 <body>
-    <header class="header">
-        <h1 class="header-title">Ceep</h1>
-        <button>
-            <p>Oi</p>
-        </button>
-        <button>
-            <p>Tchau</p>
-        </button>
+    <header class="header container">
+        <h1 class="header__title">Ceep</h1>
+        <nav class="header__menu">
+            <ul>
+                <li class="header__btn">
+                    <a href="#">Linhas</a>
+                </li>
+                <li class="header__btn">
+                    <a href="#">?</a>
+                </li>
+            </ul>
+        </nav>
     </header>
+
+    <form action="" class="n-card">
+        <textarea class="n-card__content" placeholder="Digite o conteúdo de seu novo cartão" name="" id="" cols="30" rows="10"></textarea>
+        <input class="n-card__action" type="submit" value="Salvar">
+    </form>
+
+    <section class="container">
+        <ol class="wrap-card">
+            <li class="card" data-color="first">
+                <nav class="wrap-card-options">
+                    <ul>
+
+                        <li class="card__options card_delete">
+                            <a href="">Excluir</a>
+                        </li>
+                        <li class="card__options card_edit">
+                            <a href="">Editar</a>
+                        </li>
+
+                        <ul class="floatright">
+                            <li class="card__options" data-color="first"><a href="">Azul</a></li>
+                            <li class="card__options" data-color="second"><a href="">Vermelho</a></li>
+                            <li class="card__options" data-color="third"><a href="">Verde</a></li>
+                            <li class="card__options isActive" data-color="fourth"><a href="">Amarelo</a></li>
+                        </ul>
+                    </ul>
+                </nav>
+                <p class="card__content" contenteditable="false">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, accusantium obcaecati sit id ducimus laborum. Sint, velit, totam! Tempore optio officiis facilis, quam commodi aliquam deleniti. Dolore sit saepe sed excepturi, velit quibusdam adipisci aliquid architecto, molestiae cumque blanditiis ipsa.</p>
+            </li><!--
+            --><li class="card" data-color="second">
+                <nav class="wrap-card-options">
+                    <ul>
+                        <li class="card__options card_delete">
+                            <a href="">Excluir</a>
+                        </li>
+                        <li class="card__options card_edit">
+                            <a href="">Editar</a>
+                        </li>
+                        <ul class="floatright">
+                            <li class="card__options" data-color="first"><a href="">Azul</a></li>
+                            <li class="card__options" data-color="second"><a href="">Vermelho</a></li>
+                            <li class="card__options" data-color="third"><a href="">Verde</a></li>
+                            <li class="card__options isActive" data-color="fourth"><a href="">Amarelo</a></li>
+                        </ul>
+                    </ul>
+                </nav>
+                <p class="card__content" contenteditable="false">Illo libero cum, rerum? Vero perspiciatis a architecto similique tenetur dignissimos labore maiores, cumque autem, nemo impedit, iste incidunt ducimus quis excepturi quaerat optio deleniti molestiae voluptates pariatur at dolor? Officiis fugit similique assumenda maiores unde inventore fuga, nostrum possimus!</p>
+            </li><!--
+            --><li class="card" data-color="third">
+                <nav class="wrap-card-options">
+                    <ul>
+                        <li class="card__options card_delete">
+                            <a href="">Excluir</a>
+                        </li>
+                        <li class="card__options card_edit">
+                            <a href="">Editar</a>
+                        </li>
+                        <ul class="floatright">
+                            <li class="card__options" data-color="first"><a href="">Azul</a></li>
+                            <li class="card__options" data-color="second"><a href="">Vermelho</a></li>
+                            <li class="card__options" data-color="third"><a href="">Verde</a></li>
+                            <li class="card__options isActive" data-color="fourth"><a href="">Amarelo</a></li>
+                        </ul>
+                    </ul>
+                </nav>
+                <p class="card__content" contenteditable="false">Explicabo numquam asperiores officia. At alias tenetur hic fuga optio atque, excepturi, dignissimos, iure odio consequatur, beatae. Voluptatibus, eligendi odio corrupti quo, iure assumenda. Incidunt repellendus quam velit omnis laboriosam quae atque! Libero voluptate quam impedit, beatae optio veniam expedita.</p>
+            </li><!--
+            --><li class="card" data-color="fourth">
+                <nav class="wrap-card-options">
+                    <ul>
+                        <li class="card__options card_delete">
+                            <a href="">Excluir</a>
+                        </li>
+                        <li class="card__options card_edit">
+                            <a href="">Editar</a>
+                        </li>
+                        <ul class="floatright">
+                            <li class="card__options" data-color="first"><a href="">Azul</a></li>
+                            <li class="card__options" data-color="second"><a href="">Vermelho</a></li>
+                            <li class="card__options" data-color="third"><a href="">Verde</a></li>
+                            <li class="card__options isActive" data-color="fourth"><a href="">Amarelo</a></li>
+                        </ul>
+                    </ul>
+                </nav>
+                <p class="card__content" contenteditable="false">Culpa fuga aliquam laudantium ducimus blanditiis eum totam ipsum fugit rerum perferendis cum ipsam accusamus optio sapiente nemo soluta, ullam eveniet sequi quis ex at, eaque. Odit vitae sed nulla ut error. Fugit quae optio nihil dolores magni eos doloremque.</p>
+            </li><!--
+        --></ol>
+    </section>
+    <script src="js/card.js"></script>
+    <script src="js/n-card.js"></script>
 </body>
 </html>

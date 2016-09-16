@@ -1,0 +1,31 @@
+.n-card{
+    background-color: #555;
+    margin-bottom: 40px;
+    padding: 24px 127px;
+}
+.n-card__content{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 560px;
+    height: 20px;
+    padding: 12px;
+    transition: height .2s linear,
+                box-shadow .2s linear;
+}
+.n-card__content:focus{
+    height: 100px;
+    -webkit-box-shadow: 0px 0px 8px 2px rgba(88, 163, 226, 1);
+       -moz-box-shadow: 0px 0px 5px 1px rgba(88, 163, 226, 1);
+            box-shadow: 0px 0px 5px 1px rgba(88, 163, 226, 1);
+}
+.n-card__action{
+    display: block;
+    background-color: #7FBBED;
+    color: #555;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 10px;
+    margin: 20px auto 0 auto;
+    cursor: pointer;
+}
