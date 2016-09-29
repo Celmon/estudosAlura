@@ -65,3 +65,9 @@ pai > filho
     p:after { content: '"' } ( depois do elemento 'p' terá este conteúdo )
 
 -
+
+    if ($('.exemplo').hasClass('block')) {
+        do this
+    } else {
+        do this
+    }
