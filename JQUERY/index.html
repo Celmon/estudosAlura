@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ceep</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/n-card.css">
+</head>
+<body>
+    <header class="header container">
+        <h1 class="header__title">Ceep</h1>
+    </header>
+    <form action="">
+        <button id="btn-atualiza" type="submit">Atualizar Lista</button>
+    </form>
+    <ul class="listas">
+        <li>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </li>
+        <li>
+            <p>Hic provident fugit, ab, quas enim.</p>
+        </li>
+        <li>
+            <p>Voluptas ipsum dolore voluptatem, culpa eos quasi officiis.</p>
+        </li>
+        <li>
+            <p>Aliquid reprehenderit eum in, dolorem suscipit, magni modi ad similique eligendi vero.</p>
+        </li>
+    </ul>
+    <form action="">
+        <input class="treino" type="text">
+        <input class="btn-add" type="button" value="Adicionar">
+    </form>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $('.listas').on('dblclick', 'li', function(){
+            $(this).animate({"margin-left" : "+=100"}, function(){
+                $(this).remove();
+            });
+        });
+        $('.btn-add').click(function(){
+            var texto = $('.treino').val();
+            $('<li>').text(texto).css({ 'color' : 'purple', 'background-color' : 'lightblue'}).appendTo('.listas');
+        });
+        $('#btn-atualiza').click(function(){
+            $.ajax({
+                url : 'http://mirrorfashion.caelum.com.br/treinamentos',
+                dataType : 'jsonp',
+                sucess: function(retorno) {
+                    $.each(retorno.treinamentos, function(){
+                        var treinamento = this;
+                        alert(treinamento.nome);
+                    });
+                }
+            })
+        });
+    </script>
+</body>
+</html>

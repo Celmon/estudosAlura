@@ -1,0 +1,9 @@
+.container{
+    padding: 0 10%;
+}
+.floatright{ float: right; }
+.error{
+    display: block;
+    color: red;
+    text-align: center;
+}
