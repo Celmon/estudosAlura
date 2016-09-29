@@ -2,9 +2,10 @@
 var $wrapCard = document.querySelector('.wrap-card');
 var $cardColors = document.querySelectorAll(".card__options");
 
-    $wrapCard.addEventListener('click', function(){
+    $wrapCard.addEventListener('click', function(event){
+
         var $this = event.target;
-        var $card = $this.parentNode.parentNode.parentNode.parentNode;
+        var $card = $this.parentNode.parentNode.parentNode;
         var $cardContent = $card.querySelector('.card__content');
 
         if ($this.dataset.color) {
