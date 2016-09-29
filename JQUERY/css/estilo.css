@@ -1,0 +1,38 @@
+.header{
+    background-color: #0082c7;
+    height: 40px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+.header__title{
+    color: #b3daee;
+    display: inline;
+    vertical-align: middle;
+}
+.header__btn:first-child { margin-right: 15px; }
+.listas, form {
+    width: 400px;
+    margin: 0 auto;
+}
+.listas li{
+    margin-top: 10px;
+    padding: 10px;
+}
+form { margin-top: 20px;}
+.treino {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    height: 22px;
+    width: 280px;
+    padding: 8px;
+}
+.btn-add {
+    background-color: #006195;
+    font-size: 16px;
+    color: #fff;
+    box-sizing: content-box;
+    height: 22px;
+    padding: 8px;
+    display: inline-block;
+    border-radius: 3px;
+}
