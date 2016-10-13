@@ -37,6 +37,17 @@ td {
 	border-bottom: 1px solid #ddd;
 }
 
+.recuperado{
+	background-color: yellow;
+}
+
+.hovering{
+	background: #ccc;
+}
+
+#show-pro{
+	display:none;
+}
 
 .propaganda td {
 	background: #9F0;
@@ -48,13 +59,14 @@ td {
 }
 
 .remove-item {
-	display: none;
 	background: #F30;
 	border-radius: 2px;
 	color: white;
 	font-size: 0.7em;
 	text-decoration: none;
 	text-transform: uppercase;
+
+	display: none;
 	padding: 0.5em;
 }
 
@@ -79,16 +91,4 @@ input[type=button] {
 	padding: 1.5em;
 	line-height: 2;
 	margin: 2em 0;
-}
-
-.recuperado{
-	background-color: yellow;
-}
-
-.hovering{
-	background: #ccc;
-}
-
-#show-pro{
-	display:none;
 }

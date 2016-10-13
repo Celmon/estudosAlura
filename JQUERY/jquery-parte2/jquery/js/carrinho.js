@@ -50,11 +50,11 @@ var undo = function(){
 };
 
 var daDestaque = function(){
-  $(this).find('.remove-item').fadeIn(100);
+  $(this).find('.remove-item').fadeIn();
   $(this).addClass('hovering');
 };
 var tiraDestaque = function(){
-  $(this).find('.remove-item').fadeOut(100);
+  $(this).find('.remove-item').fadeOut();
   $(this).removeClass('hovering');
 };
 
