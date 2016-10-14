@@ -53,23 +53,23 @@ gulp.task('server', function(){
     browserSync.init({
 
         server: {
-            baseDir: 'HTML+CSS+JavaScript'
+            baseDir: 'jquery-pratica'
         }
     });
 
-    gulp.watch('src/js/*.js').on('change', function(event){
+    gulp.watch('jquery-pratica/js/*.js').on('change', function(event){
         gulp.src(event.path)
             .pipe(jsHint())
             .pipe(jsHint.reporter(jshintStylish));
     });
 
-    gulp.watch('src/css/*.css').on('change', function(event){
+    gulp.watch('jquery-pratica/css/*.css').on('change', function(event){
         gulp.src(event.path)
             .pipe(csslint())
             .pipe(csslint.reporter());
     });
 
-    gulp.watch('src/less/*.less').on('change', function(event){
+    gulp.watch('jquery-pratica/less/*.less').on('change', function(event){
         gulp.src(event.path)
             .pipe(less().on('error', function(error){
                 console.log('Problema na compilação');
@@ -78,5 +78,5 @@ gulp.task('server', function(){
             .pipe(gulp.dest('src/css'));
     });
 
-    gulp.watch('HTML+CSS+JavaScript/**/*').on('change', browserSync.reload);
+    gulp.watch('jquery-pratica/**/*').on('change', browserSync.reload);
 });

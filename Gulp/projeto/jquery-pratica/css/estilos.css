@@ -1,0 +1,65 @@
+*{
+  border: transparent;
+  font-family: 'Trebuchet MS', sans-serif;
+  margin: 0;
+  outline: none;
+  padding: 0;
+}
+body,html{ height: 100%; }
+.formulario {
+  background-color: #eee;
+  border-radius: 5px;
+  color: #888;
+  font-size: 14px;
+  font-weight: bold;
+  height: 300px;
+  margin-left: calc(50vw - 200px);
+  margin-top: 270px;
+  /*margin-top: calc(40vh - 150px);*/
+  padding: 20px;
+  text-transform: uppercase;
+  width: 400px;
+}
+.formulario label { display: block; }
+.formulario label:nth-of-type(2) { margin-top: 20px; }
+.formulario input {
+  border-radius: 5px;
+  display: block;
+  font-size: 14px;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  width: 100%;
+}
+.formulario input[type="text"] { color: inherit; }
+.formulario input[type="text"]:focus,
+.formulario input[type="text"]:visited {
+  -webkit-box-shadow: 0 0 5px #888;
+          box-shadow: 0 0 5px #888;
+}
+.btn {
+  background-color: #520120;
+  -webkit-box-shadow: 0 5px 0 #75143A;
+          box-shadow: 0 5px 0 #75143A;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  text-transform: uppercase;
+  top: 0;
+  -webkit-transition: .2s;
+       -o-transition: .2s;
+          transition: .2s;
+}
+.btn:hover,
+.btn:focus,
+.btn:active {
+  background-color: #75143A;
+  -webkit-box-shadow: 0 0 0 #75143A;
+          box-shadow: 0 0 0 #75143A;
+  top: 5px;
+}
+.sucess{
+  display: none;
+  text-align: center;
+  margin-top: 130px;
+}
