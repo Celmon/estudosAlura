@@ -3,9 +3,6 @@ body{
   font-size: 14px;
   color:$cinza_medio;
 }
-div{
-//  border: 1px solid #333;
-}
 
 $largura-menu:110px;
 
@@ -30,9 +27,6 @@ $largura-menu:110px;
     margin-left: -$largura-menu !important;
   }
 
-  @include medium-down{
-  //  font-size: 10px;
-  }
   .navbar-header {
     height: 60px;
   }
@@ -90,7 +84,6 @@ $largura-menu:110px;
           height: auto;
           padding-top: 12px;
           padding-bottom: 12px;
-        //   margin-bottom: 20px;
       }
       @include small-down{
         height: 18vh;
@@ -107,9 +100,6 @@ $largura-menu:110px;
     fill: $cinza_medio;
     @include large-up{
       width: 22%;
-    }
-    @include small-down{
-      //width: 20%;
     }
   }
   a:hover, a:hover svg path, a:hover svg polygon, a:hover  svg circle {
@@ -134,7 +124,6 @@ $largura-menu:110px;
       background-color: $branco;
     }
     li{
-    //  margin-bottom: 20px;
       height: 100vh;
       display: block;
     }
@@ -308,7 +297,6 @@ section.container-fluid { max-width: 1200px; }
 
 
 .hero{
-  //float: left;
   background:{
     size:cover;
     position:center;
@@ -402,9 +390,6 @@ footer{
   padding-top: 18px;
   padding-bottom: 18px;
   font: 12px 'poppinslight';
-  @include small-down{
-    // height: auto;
-  }
   color:$branco;
   a{
     color:$branco;
