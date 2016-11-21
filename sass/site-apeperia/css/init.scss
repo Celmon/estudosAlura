@@ -1,0 +1,19 @@
+//frameworks
+@import '../../scripts/src/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+@import '../../scripts/src/font-awesome-sass/assets/stylesheets/_font-awesome.scss';
+
+//misc settings
+@import 'config/_variables';
+@import 'config/_mixins';
+@import 'config/_settings';
+@import 'config/_responsive';
+
+
+//global things
+@import 'general/_reset';
+@import 'layout/_main';
+
+//pages
+@import 'pages/_home';
+@import 'pages/_verticais';
+@import 'pages/_blog';

@@ -1,0 +1,69 @@
+// Add your settings here
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+body{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color:$cinza_medio;
+}
+
+@font-face {
+    font-family: 'poppinsregular';
+    src: url('../fonts/poppins/poppins-regular-webfont.woff2') format('woff2'),
+         url('../fonts/poppins/poppins-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'poppinslight';
+    src: url('../fonts/poppins/poppins-light-webfont.woff2') format('woff2'),
+         url('../fonts/poppins/poppins-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'poppinsbold';
+    src: url('../fonts/poppins/poppins-bold-webfont.woff2') format('woff2'),
+         url('../fonts/poppins/poppins-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+// WEBRADAR buttons
+// --------------------------------------------------
+
+.btn-webradar {
+  @include button-variant($branco, transparent, $branco);
+  font-family: 'poppinslight';
+  font-size:17px;
+  padding: 25px 30px;
+  border-radius: 0px;
+  @include transition(.2s)
+  &:hover{
+      color: $rosa_claro;
+      background-color: $branco;
+  }
+}
+.btn-cases {
+  @include button-variant($branco, $branco-transparente, $branco);
+  font-size:17px;
+  line-height: 20px;
+  padding: 10px 15px;
+  border-radius: 0px;
+}
+.btn-form {
+  @include button-variant($branco, $rosa_claro, transparent);
+  font-family: 'poppinslight';
+  font-size:17px;
+  padding: 10px;
+  border-radius: 0px;
+}
