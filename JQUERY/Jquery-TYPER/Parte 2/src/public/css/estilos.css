@@ -1,0 +1,73 @@
+.body { overflow: scroll; }
+
+.frase{ font-size: 20px; }
+#erro {
+  display: none;
+  color: red; 
+}
+#salvou {
+  display: none;
+  color: green; 
+}
+#spinner { display: none; }
+.campo-digit{
+  font-size: 20px;
+  height:  130px;
+  border: 2px solid #777777;
+}
+.campo-desativado{ background-color: lightgray; }
+.icones { vertical-align: middle; }
+.borda-verde{ border: 2px solid green; }
+.borda-vermelha{ border: 2px solid red; }
+
+.placar { display: none; }
+#frase-id{
+  width: 50px;
+}
+#btn-sync { float: right; }
+
+.topo_login{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #525252;
+  text-align: center;
+  color: #efefef;
+}
+.topo_login p{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.msg_sync{
+  visibility: hidden;
+  position: absolute;
+  top: 470px;
+  right: 315px;
+  padding: 10px 20px;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, .5);
+  color: #ffffff;
+}
+.msg_sync-elps{
+  position: absolute;
+  visibility: hidden;
+  top: 470px;
+  right: 315px;
+  width: 80px;
+  height: 80px;
+  background-color: #777777;
+  opacity: 0;
+  border-radius: 50%;
+  -webkit-transition: .3s;
+     -moz-transition: .3s;
+          transition: .3s;
+}
+
+.teste,
+.teste-elps{
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: .3s;
+     -moz-transition: .3s;
+          transition: .3s;
+}

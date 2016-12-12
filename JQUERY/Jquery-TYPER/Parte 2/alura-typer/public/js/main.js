@@ -67,17 +67,26 @@
   }
 
   function mostraPlacar() {
-    $('.placar').slideToggle(600);
+    $('.placar').stop().slideToggle(600);
   }
 
   function inserePlacar(){
     var corpoTabela = $('.placar').find('tbody');
-    var usuario = "Sou eu bola de fogo"
+    var usuario = "Biiiiiiirll!!!!!!!!!!!!"
     var fimPalavras = $('#cont-palav').text();
     var fimCaracteres = $('#cont-caract').text();
     var linha = novalinha(usuario,fimPalavras,fimCaracteres);
     linha.find('.botao-remover').click(removeLinha);
     corpoTabela.prepend(linha);
+    $('.placar').slideDown(500);
+    scrollPlacar();
+  }
+
+  function scrollPlacar(){
+    var posicaoPlacar = $('.placar').offset().top;
+    $('body').animate({
+      scrollTop: posicaoPlacar+"px"
+    },1000);
   }
 
   function novalinha(usuario,fimPalavras,fimCaracteres){
@@ -104,7 +113,11 @@
   function removeLinha(){
     $('.botao-remover').click(function(event){
       event.preventDefault();
-      $(this).closest('tr').remove();
+      var linha = $(this).closest('tr');
+      linha.fadeOut(1000);
+      setTimeout(function(){
+        linha.remove();
+      },1000);
     });
   }
 

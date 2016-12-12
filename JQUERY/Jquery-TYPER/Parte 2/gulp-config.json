@@ -1,0 +1,14 @@
+{
+    "srcPath":"src",
+    "srcDist":"dist",
+    "srcWatch":"src/**/**/*",
+    "favIcoSrcPath":"src/favicon/*",
+    "favIcoSrcDist":"dist/favicon",
+    "imgSrcPath":"src/img/**/*",
+    "imgSrcDist":"dist/img",
+    "fontSrcPath":"src/fonts/**/*",
+    "fontSrcDist":"dist/fonts",
+    "htmlSrcPath":"src/**/*.html",
+    "tasksPath":"./tasks",
+    "autoprefix":"Last 4 versions"
+}

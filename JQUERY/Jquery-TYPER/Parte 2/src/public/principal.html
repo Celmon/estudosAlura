@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Alura Typer</title>
+    <link rel="stylesheet" href="css/libs/google-fonts.css">
+    <link rel="stylesheet" href="css/libs/materialize.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="topo_login">
+    <p>You should not, pass!</p>
+    <p>Mude seu usuário, <a href="#modal1" id="modal-login">aqui.</a></p>
+  </header>
+  <div class="container">
+    <h1 class="center">Alura Typer</h1>
+    <p class="frase">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore obcaecati quis laboriosam minima sequi laudantium necessitatibus saepe debitis quam deleniti sed libero ut itaque ducimus quos, ratione modi, voluptatum doloremque.</p>
+    <div class="center">
+      <img src="img/spinner.gif" alt="Spinner" id="spinner">
+      <p id="erro">Xablau!</p>
+      <p id="salvou">Xablau!</p>
+    </div>
+    <ul class="informacoes center">
+      <li>
+        <i class="small material-icons icones">description</i>
+        <span id="tm-frase">2</span> palavras
+      </li>
+      <li>
+        <i class="small material-icons icones">query_builder</i>
+        <span id="tempo">5</span> segundos
+      </li>
+    </ul>
+
+    <textarea class="campo-digit" rows="8" cols="40"></textarea>
+
+    <div class="btns">
+       <a class="btn-floating btn-large waves-effect waves-light red" id="btn-reiniciar">
+         <i class="material-icons">restore</i>
+       </a>
+       <a class="btn-floating btn-large waves-effect waves-light green" id="btn-placar">
+         <i class="material-icons">assignment</i>
+       </a>
+       <a class="btn-floating btn-large waves-effect waves-light blue" id="btn-frase">
+         <i class="material-icons">shuffle</i>
+       </a>
+       <a class="btn-floating btn-large waves-effect waves-light cyan" id="btn-frase-id">
+         <i class="material-icons">repeat_one</i>
+       </a>
+       <input type="number" id="frase-id" min="0" max="9">
+       <a class="btn-floating btn-large waves-effect waves-light yellow" id="btn-sync">
+         <i class="material-icons">swap_vert</i>
+       </a>
+       <p class="msg_sync">Funcionou!</p>
+    </div>
+
+    <ul class="center">
+      <li><span id="cont-caract">0</span> caracteres</li>
+      <li><span id="cont-palav">0</span> palavras</li>
+    </ul>
+
+    <section class="placar">
+      <h3 class="center">Placar</h3>
+      <table class="centered bordered">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <!--<th>No. de Caracteres</th>-->
+            <th>No. de Palavras</th>
+            <th>Remover</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>Escolha um nome de usuário</h4>
+        <form action="">
+          <input type="text" id="login-name" value="Usuário Padrão">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Escolhido</a>
+      </div>
+    </div>
+    <!-- / Modal -->
+
+
+  </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/frase.js"></script>
+</body>
+</html>
