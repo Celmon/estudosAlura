@@ -34,15 +34,27 @@
             </fieldset>
         </form>-->
         <p>Você possui <span id="pontos">15</span> pontos para gastar em seu robô.</p>
-        <form action="">
+        <form action="" class="stats-robo">
             <fieldset class="form-group">
-                <label for="ataque">Valor de ataque:</label>
-                <input type="number" value="0" min="0" class="form-control" id="ataque">
-                <label for="defesa">Valor de defesa:</label>
-                <input type="number" value="0" min="0" class="form-control" id="defesa">
-                <label for="vida">Valor de vida:</label>
-                <input type="number" value="0" min="0" class="form-control" id="vida">
-                <button class="btn btn-block btn-primary" id="enviar">Enviar</button>
+                <div class="row">
+                    <div class="col-xs-4">
+                        <label for="ataque">Valor de ataque:</label>
+                        <input type="number" value="0" min="0" class="form-control" id="ataque">
+                    </div>
+                    <div class="col-xs-4">
+                        <label for="defesa">Valor de defesa:</label>
+                        <input type="number" value="0" min="0" class="form-control" id="defesa">
+                    </div>
+                    <div class="col-xs-4">
+                        <label for="vida">Valor de vida:</label>
+                        <input type="number" value="0" min="0" class="form-control" id="vida">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4 col-xs-offset-4">
+                        <button class="btn btn-block btn-primary" id="enviar">Enviar</button>
+                    </div>
+                </div>
             </fieldset>
         </form>
     </main>

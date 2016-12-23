@@ -62,15 +62,7 @@ $(function(){
     console.log(maioridade(22));
     */
 
-
-
-
-
-
-
-
-
-
+    // Desafio 10
     var submit = document.getElementById('enviar');
 
     $(document).change(function(){
@@ -94,7 +86,7 @@ $(function(){
         }
 
         if(pontosFinal == 0){
-            console.log('Acabaram seus pontos');
+            // console.log('Acabaram seus pontos');
             ataqueInput.setAttribute('max', ataque);
             defesaInput.setAttribute('max', defesa);
             vidaInput.setAttribute('max', vida);
@@ -135,16 +127,6 @@ $(function(){
             console.log('Você morreu');
         } else { console.log('Sua vida após a batalha : ' + robo.vida); }
     }
-
-
-
-
-
-
-
-
-
-
 
 
 
