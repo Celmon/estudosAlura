@@ -34,7 +34,7 @@
             </fieldset>
         </form>-->
         <p>Você possui <span id="pontos">15</span> pontos para gastar em seu robô.</p>
-        <form action="" class="stats-robo">
+        <form action="" class="stats-inicial">
             <fieldset class="form-group">
                 <div class="row">
                     <div class="col-xs-4">
@@ -52,11 +52,42 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-4 col-xs-offset-4">
-                        <button class="btn btn-block btn-primary" id="enviar">Enviar</button>
+                        <button class="btn btn-block btn-primary" id="enviar">Criar robô</button>
                     </div>
                 </div>
             </fieldset>
         </form>
+        <div class="stats-lvup">
+            <p>Você possui <span id="pontos-lvup">2</span> pontos por ter passado de nível.</p>
+            <form action="">
+                <fieldset class="form-group">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <label for="ataque">Valor de ataque:</label>
+                            <input type="number" value="0" min="0" class="form-control" id="ataque-lvup">
+                        </div>
+                        <div class="col-xs-12">
+                            <label for="defesa">Valor de defesa:</label>
+                            <input type="number" value="0" min="0" class="form-control" id="defesa-lvup">
+                        </div>
+                        <div class="col-xs-12">
+                            <label for="vida">Valor de vida:</label>
+                            <input type="number" value="0" min="0" class="form-control" id="vida-lvup">
+                        </div>
+                        <div class="col-xs-12">
+                            <button class="btn btn-block btn-primary" id="enviar-lvup">Enviar</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-4">
+                <button class="btn btn-block btn-primary" id="lutar">Batalhar</button>
+            </div>
+        </div>
+
     </main>
      <!-- build:js js/libs_NomeProjeto_rodape.js -->
      <script src="js/jquery.js"></script>

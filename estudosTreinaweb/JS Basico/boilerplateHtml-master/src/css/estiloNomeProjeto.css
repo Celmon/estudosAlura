@@ -9,7 +9,10 @@
 
 html,
 body,
-main { height:100%; }
+main {
+  position: relative;
+  height:100%;
+}
 
 body {
   font-family: 'robotoregular', sans-serif;
@@ -53,4 +56,26 @@ textarea {
     Elementos gerais
    ========================================================================== */
 
-   .stats-robo .btn{ margin-top: 20px; }
+  .btn,
+  .stats-lvup label { margin-top: 20px; }
+  .stats-lvup {
+    /*position: absolute;*/
+    visibility: hidden;
+    margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 400px;
+    padding: 30px;
+    background-color: #ffffff;
+    color: #777777;
+    border: 1px solid #eeeeee;
+    border-radius: 7px;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    opacity: 0;
+  }
+  .stats-atv {
+    visibility: visible;
+    opacity: 1;
+  }

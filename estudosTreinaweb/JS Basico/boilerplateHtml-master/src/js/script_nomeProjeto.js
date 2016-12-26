@@ -64,6 +64,8 @@ $(function(){
 
     // Desafio 10
     var submit = document.getElementById('enviar');
+    var submitLvUp = document.getElementById('enviar-lvup');
+    var lutar = document.getElementById('lutar');
 
     $(document).change(function(){
         var pontos = 15;
@@ -96,6 +98,36 @@ $(function(){
             vidaInput.setAttribute('max', '15');
         }
 
+        var pontosLvUp = 2;
+        var pontosLvUpElemento = document.getElementById('pontos-lvup');
+
+        var ataqueLvUp = document.getElementById('ataque-lvup').value;
+        var ataqueLvUpInput = document.getElementById('ataque-lvup');
+
+        var defesaLvUp = document.getElementById('defesa-lvup').value;
+        var defesaLvUpInput = document.getElementById('defesa-lvup');
+
+        var vidaLvUp = document.getElementById('vida-lvup').value;
+        var vidaLvUpInput = document.getElementById('vida-lvup');
+
+        while(ataqueLvUp <= 2 || defesaLvUp <= 2 || vidaLvUp <= 2){
+            var pontosFinal = ((pontosLvUp -= ataqueLvUp),(pontosLvUp -= defesaLvUp),(pontosLvUp -= vidaLvUp));
+            // console.log(pontosFinal);
+            pontosLvUpElemento.innerHTML = pontosFinal;
+            break;
+        }
+
+        if(pontosFinal == 0){
+            // console.log('Acabaram seus pontos');
+            ataqueLvUpInput.setAttribute('max', ataqueLvUp);
+            defesaLvUpInput.setAttribute('max', defesaLvUp);
+            vidaLvUpInput.setAttribute('max', vidaLvUp);
+        } else {
+            ataqueLvUpInput.setAttribute('max', '15');
+            defesaLvUpInput.setAttribute('max', '15');
+            vidaLvUpInput.setAttribute('max', '15');
+        }
+
     });
 
     var rival = {
@@ -117,11 +149,28 @@ $(function(){
         luta(robo,rival);
     });
 
+    submitLvUp.addEventListener('click', function(event){
+        event.preventDefault();
+        var v1LvUp = document.getElementById('ataque').value;
+        var v2LvUp = document.getElementById('defesa').value;
+        var v3LvUp = document.getElementById('vida').value;
+        robo.ataque = robo.ataque += v1LvUp;
+        robo.defesa = robo.defesa += v2LvUp;
+        robo.vida = robo.vida += v3LvUp;
+        console.log(robo);
+    });
+
+    // lutar.addEventListener('click', function(event){
+    //     luta(robo,rival);
+    // });
+
     function luta(robo, rival){
         (robo.defesa >= rival.ataque)?robo.vida -= 1:robo.vida -= (rival.ataque -= robo.defesa);
         (rival.defesa >= robo.ataque)?rival.vida -= 1:rival.vida -= (robo.ataque -= rival.defesa);
         if(rival.vida <= 0){
             console.log('Você derrotou seu rival');
+            console.log('Você passou de nível e possui 2 pontos para distribuir');
+            $('.stats-lvup').toggleClass('stats-atv');
         } else { console.log('A vida de seu rival após a batalha : ' + rival.vida); }
         if(robo.vida <= 0){
             console.log('Você morreu');
