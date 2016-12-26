@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    // var nomes = ['primeiro','segundo','terceiro', 'a ropa', 11, 28, 18, 12, '10', 22, '23'];
+    // var indice = Math.floor(Math.random()*nomes.length);
+    // console.log(nomes[indice]);
+
+    //Math.ceil(arredonda para cima)
+    //Math.floor(arredonda para baixo)
+    //Math.round(democratico)
+    //Math.pow(potência)
+    //Math.sqrt(raiz quadrada)
+
+    // var nomes2 = ['quarto','quinto','sexto','sétimo','oitávo','nôno', 10];
+    // var todos = nomes.concat(nomes2);
+
+    // nomes.push('Paralamas');
+    // console.log(nomes.shift());
+
+    // console.log(nomes);
+    // console.log(nomes.reverse());
+
+    // console.log(nomes.join(' má ôee '));
+
+    // console.log(nomes.slice(0,2));
+
+    // console.log(todos);
+
+    // console.log(nomes.sort(function(a,b){ return -(a-b) }));
+
+    /*nomes.splice(2,3,'cinquenta','Di');
+    console.log(nomes);*/
+
+    // var resultado = nomes.indexOf('terceiro');
+    // console.log(nomes[resultado]);
+
+    /*for(var i = 0; i < nomes.length; i++){
+        console.log(nomes[i]);
+    }*/
+
+    /*var nomes = new Array(10, 20, 'texto');
+    console.log(nomes);*/
+
+    var itens = ['Flanela', 'Rio', 'Mar', 'Abacaxi', 'Cebola', 'Magrela', 'Jarro', 'Sopro', 'Algazarra'];
+
+    var Impressora = function(nome, tempoImpressao){
+
+        var status = 'aguardando';
+        // this.nome = nome;
+        // this.marca = marca;
+        // console.log('Eu ' + nome + ' da ' + marca + ' peguei o item: ' + itens.shift());
+        this.trabalhar = function(){
+            var trabalho = setInterval(verificarFila,1000);
+        }
+
+        var verificarFila = function(){
+            if(status === 'aguardando'){
+                status = 'trabalhando';
+                var item = itens.shift();
+                if(item){
+                    imprimir(item);
+                } else {
+                    console.log('Fila Vazia');
+                    status = 'aguardando';
+                }
+            }else {
+                console.log(nome+': Ocupada');
+            }
+        }
+
+        var imprimir = function(item){
+            var tempo = setTimeout(function(){
+                console.log(nome+': '+item);
+                status = 'aguardando';
+            }, tempoImpressao);
+        }
+
+    }
+
+    var i1 = new Impressora('Chica', 2000);
+    var i2 = new Impressora('Zorthon', 1500);
+
+    i1.trabalhar();
+    i2.trabalhar();
+
+    // for(var i = 0; i < itens.length; i++){
+    //     var xoxa = new Impressora('Notre', 'me');
+    //     var patati = new Impressora('Patati', 'Marvel');
+    //     var cocota = new Impressora('Cocota', 'China');
+    //     if(itens.length == 0){
+    //         alert('Acabou a lista de impressão');
+    //     }
+    // }
+
+    // console.log(itens);
+
+</script>

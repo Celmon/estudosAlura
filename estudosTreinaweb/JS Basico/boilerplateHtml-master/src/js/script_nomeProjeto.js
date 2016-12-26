@@ -136,16 +136,20 @@ $(function(){
         vida: 3
     }
 
+    // function roboUsuario(valor1, valor2, valor3){
+    //     var robo = {
+    //         ataque: valor1,
+    //         defesa: valor2,
+    //         vida: valor3
+    //     }
+    // }
+
     submit.addEventListener('click', function(event){
         event.preventDefault();
         var valor1 = document.getElementById('ataque').value;
         var valor2 = document.getElementById('defesa').value;
         var valor3 = document.getElementById('vida').value;
-        var robo = {
-            ataque: valor1,
-            defesa: valor2,
-            vida: valor3
-        }
+        roboUsuario(valor1, valor2, valor3);
         luta(robo,rival);
     });
 

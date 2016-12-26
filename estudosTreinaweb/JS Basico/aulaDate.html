@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var d1 = new Date('05/31/1993 23:59:59');
+    var hoje = new Date();
+
+    var diaNiver = d1.getDate();
+    var mesNiver = d1.getMonth();
+
+    var diaHoje = hoje.getDate();
+    var mesHoje = hoje.getMonth()
+
+    if(diaNiver === diaHoje && mesNiver === mesHoje){
+        alert('Feliz aniversário');
+    } else {
+        d1.setFullYear(hoje.getFullYear());
+        if(+hoje > +d1){
+            d1.setFullYear(hoje.getFullYear() +1);
+        }
+        var umDia = 1000 * 60 * 60 * 24;
+        var faltamDias = Math.floor(Math.abs(+hoje - +d1)/umDia);
+        alert('Faltam '+faltamDias+' dias.');
+    }
+
+</script>
