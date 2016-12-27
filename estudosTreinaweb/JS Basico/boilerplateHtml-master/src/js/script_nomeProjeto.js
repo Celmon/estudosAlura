@@ -62,7 +62,7 @@ $(function(){
     console.log(maioridade(22));
     */
 
-    // Desafio 10
+    /*// Desafio 10
     var submit = document.getElementById('enviar');
     var submitLvUp = document.getElementById('enviar-lvup');
     var lutar = document.getElementById('lutar');
@@ -179,7 +179,7 @@ $(function(){
         if(robo.vida <= 0){
             console.log('Você morreu');
         } else { console.log('Sua vida após a batalha : ' + robo.vida); }
-    }
+    }*/
 
 
 
