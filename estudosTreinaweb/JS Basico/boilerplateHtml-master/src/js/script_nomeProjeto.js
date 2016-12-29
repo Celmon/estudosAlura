@@ -98,7 +98,7 @@ $(function(){
             vidaInput.setAttribute('max', '15');
         }
 
-        var pontosLvUp = 2;
+        var pontosLvUp = 5;
         var pontosLvUpElemento = document.getElementById('pontos-lvup');
 
         var ataqueLvUp = document.getElementById('ataque-lvup').value;
@@ -110,7 +110,7 @@ $(function(){
         var vidaLvUp = document.getElementById('vida-lvup').value;
         var vidaLvUpInput = document.getElementById('vida-lvup');
 
-        while(ataqueLvUp <= 2 || defesaLvUp <= 2 || vidaLvUp <= 2){
+        while(ataqueLvUp <= 5 || defesaLvUp <= 5 || vidaLvUp <= 5){
             var pontosFinal = ((pontosLvUp -= ataqueLvUp),(pontosLvUp -= defesaLvUp),(pontosLvUp -= vidaLvUp));
             pontosLvUpElemento.innerHTML = pontosFinal;
             break;
@@ -121,39 +121,40 @@ $(function(){
             defesaLvUpInput.setAttribute('max', defesaLvUp);
             vidaLvUpInput.setAttribute('max', vidaLvUp);
         } else {
-            ataqueLvUpInput.setAttribute('max', '2');
-            defesaLvUpInput.setAttribute('max', '2');
-            vidaLvUpInput.setAttribute('max', '2');
+            ataqueLvUpInput.setAttribute('max', '5');
+            defesaLvUpInput.setAttribute('max', '5');
+            vidaLvUpInput.setAttribute('max', '5');
         }
 
     });
 
-    /*var rival = {
-        ataque: 3,
-        defesa: 3,
-        vida: 3
-    }*/
+    var RivalNv0 = function(){
+        this.ataque = Math.floor(Math.random() * (5 - 2) + 2);
+        this.defesa = Math.floor(Math.random() * (5 - 2) + 2);
+        this.vida = Math.floor(Math.random() * (5 - 2) + 2);
+    }
 
-    var rivais = [
-        {
-            ataque: 3,
-            defesa: 3,
-            vida: 3
-        },
-        {
-            ataque: 5,
-            defesa: 3,
-            vida: 4
-        },
-        {
-            ataque: 5,
-            defesa: 5,
-            vida: 5
-        }
-    ]
+    var RivalNv1 = function(){
+        this.ataque = Math.floor(Math.random() * (8 - 3) + 3);
+        this.defesa = Math.floor(Math.random() * (8 - 3) + 3);
+        this.vida = Math.floor(Math.random() * (8 - 3) + 3);
+    }
 
+    var RivalNv2 = function(){
+        this.ataque = Math.floor(Math.random() * (9 - 5) + 5);
+        this.defesa = Math.floor(Math.random() * (9 - 5) + 5);
+        this.vida = Math.floor(Math.random() * (9 - 5) + 5);
+    }
+
+    var Boss = function(){
+        this.ataque = Math.floor(Math.random() * (15 - 10) + 10);
+        this.defesa = Math.floor(Math.random() * (10 - 7) + 7);
+        this.vida = Math.floor(Math.random() * (9 - 5) + 5);
+    }
 
     var Robo = function(){
+        this.nv = 0;
+        this.exp = 0;
         this.ataque = 0;
         this.defesa = 0;
         this.vida = 0;
@@ -170,6 +171,7 @@ $(function(){
         robo.ataque = parseInt(valor1);
         robo.defesa = parseInt(valor2);
         robo.vida = parseInt(valor3);
+        robo.vidaInicial = parseInt(valor3);
         console.log(robo);
     });
 
@@ -182,12 +184,27 @@ $(function(){
         robo.ataque = robo.ataque += parseInt(v1LvUp);
         robo.defesa = robo.defesa += parseInt(v2LvUp);
         robo.vida = robo.vida += parseInt(v3LvUp);
+        robo.vidaInicial = robo.vidaInicial += parseInt(v3LvUp);
         console.log(robo);
         $('.stats-lvup').toggleClass('stats-atv');
     });
 
     lutar.addEventListener('click', function(event){
-        luta(robo,rivais.shift());
+        if(robo.nv == 0){
+            var rival = new RivalNv0();
+        }
+        if(robo.nv == 1){
+            var rival = new RivalNv1();
+        }
+        if(robo.nv >= 2 && robo.nv < 4){
+            var rival = new RivalNv2();
+        }
+        if(robo.nv == 4){
+            var rival = new Boss();
+            console.log('Este é um chefão');
+        }
+        // var rival = new RivalNv0();
+        luta(robo,rival);
     });
 
     function luta(robo, rival){
@@ -196,12 +213,45 @@ $(function(){
         (rival.defesa >= robo.ataque)?rival.vida -= 1:rival.vida -= (robo.ataque - rival.defesa);
         if(rival.vida <= 0){
             console.log('Você derrotou seu rival');
-            console.log('Você passou de nível e possui 2 pontos para distribuir');
-            $('.stats-lvup').toggleClass('stats-atv');
+            lvUp(robo);
         } else { console.log('A vida de seu rival após a batalha : ' + rival.vida); }
         if(robo.vida <= 0){
             console.log('Você morreu');
         } else { console.log('Sua vida após a batalha : ' + robo.vida); }
+    }
+
+    function lvUp(robo){
+        var xp = Math.floor(Math.random() * (500 - 100) + 100);
+        robo.exp += xp;
+        console.log(robo);
+        if(robo.exp >= 500 && robo.exp < 1000 && robo.nv == 0){
+            robo.nv ++;
+            robo.vida = robo.vidaInicial;
+            console.log(robo);
+            console.log('Você passou de nível e possui 5 pontos para distribuir');
+            $('.stats-lvup').toggleClass('stats-atv');
+        }
+        if(robo.exp >= 1000 && robo.exp < 2000 && robo.nv == 1){
+            robo.nv ++;
+            robo.vida = robo.vidaInicial;
+            console.log(robo);
+            console.log('Você passou de nível e possui 5 pontos para distribuir');
+            $('.stats-lvup').toggleClass('stats-atv');
+        }
+        if(robo.exp >= 2000 && robo.exp < 3000 && robo.nv == 2){
+            robo.nv ++;
+            robo.vida = robo.vidaInicial;
+            console.log(robo);
+            console.log('Você passou de nível e possui 5 pontos para distribuir');
+            $('.stats-lvup').toggleClass('stats-atv');
+        }
+        if(robo.exp >= 3000 && robo.exp < 4000 && robo.nv == 3){
+            robo.nv ++;
+            robo.vida = robo.vidaInicial;
+            console.log(robo);
+            console.log('Você passou de nível e possui 5 pontos para distribuir');
+            $('.stats-lvup').toggleClass('stats-atv');
+        }
     }
 
 
