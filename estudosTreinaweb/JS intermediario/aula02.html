@@ -1,0 +1,52 @@
+<script>
+    /*var Contato = function(nome,endereco,telefone,email,site){
+        this.nome = nome,
+        this.endereco = endereco,
+        this.telefone = telefone,
+        this.email = email,
+        this.site = site
+    };
+    var agenda = {
+        contatos: []
+    };
+    function novoContato(nome,endereco,telefone,email,site){
+        var contatoNovo = new Contato(nome,endereco,telefone,email,site);
+        agenda.contatos.push(contatoNovo);
+    };
+    function removeContato(){
+        agenda.contatos.pop();
+    };
+    novoContato('And','Rua oito','21 99','não','www.com.br');
+    console.log(agenda);
+    novoContato('Julio','Rua nove','21 993356','julio@bol.com.br','www.jul.com.br');
+    novoContato('Oct','Rua um','21 997845','sim','www.boladao.com.br');
+    novoContato('Don','Rua dois','21 992154','tenho','www.extremo.com.br');
+    console.log(agenda);
+    removeContato();
+    console.log(agenda);*/
+
+    var agenda = {
+        nome: 'Contatos',
+        contatos: [],
+        adicionar: function(){
+            if(contato.nome && contato.telefone && contato.email){
+                this.contatos.push(contato);
+            };
+        },
+        remover: function(){
+            console.log('Semtato');
+        },
+        listar: function(){
+            for(indice in this.contatos){
+                var contato = this.contatos[indice];
+                if(contato.pagina){
+                    console.log(contato.nome+' '+contato.telefone+' '+contato.email+' '+contato.pagina);
+                }
+                else{
+                    console.log(contato.nome+' '+contato.telefone+' '+contato.email+' '+contato.pagina);
+                }
+            }
+        }
+    }
+    
+</script>
