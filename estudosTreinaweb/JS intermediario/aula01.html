@@ -1,0 +1,17 @@
+<script>
+    
+    var Carro = function(nome){
+        this.nome = nome;
+    }
+    var carro1 = new Carro('Gol');
+    var carro2 = new Carro('Fiat');
+
+    Object.defineProperty(carro1, 'nome',{
+        writable: false,
+        configurable: false,
+        value: 'Tou'
+    })
+
+    console.log(carro1);
+
+</script>

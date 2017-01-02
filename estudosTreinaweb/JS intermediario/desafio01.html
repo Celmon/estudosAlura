@@ -1,0 +1,41 @@
+<script>
+
+    var Pessoa = function(){
+        this.nome = 'Xuxa';
+        this.idade = '+ de 8000';
+    };
+    var Carro = function(xxx){
+        this.cor = xxx;
+        this.ano = '200 A.C';
+    };
+    var Passaro = function(aaa){
+        this.cor = aaa;
+        this.tamanho = 'pessoa comum';
+    };
+
+    Object.defineProperty(Carro, 'cor',{
+        configurable: false
+    });
+    Object.defineProperty(Passaro, 'cor',{
+        configurable: false
+    });
+
+    var carro1 = new Carro('cor de burro quando foge');
+    var carro2 = carro1;
+    console.log(carro1);
+    carro2.ano = '500 D.C';
+    console.log(carro2)
+
+    var pessoa1 = new Pessoa();
+    var pessoa2 = pessoa1;
+    console.log(pessoa1);
+    pessoa2.nome = 'Shotan';
+    console.log(pessoa2);
+
+    var passaro1 = new Passaro('azul da cor do mar');
+    var passaro2 = passaro1;
+    console.log(passaro1);
+    passaro2.tamanho = 'Jovem';
+    console.log(passaro2)
+
+</script>
