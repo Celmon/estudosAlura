@@ -68,6 +68,7 @@ $(function(){
     var lutar = document.getElementById('lutar');
 
     $(document).change(function(){
+        // Validação dos campos de valores de atributo do Robô
         var pontos = 15;
         var pontosElemento = document.getElementById('pontos');
 
@@ -81,14 +82,12 @@ $(function(){
         var vidaInput = document.getElementById('vida');
 
         while(ataque <= 15 || defesa <= 15 || vida <= 15){
-            var pontosFinal = ((pontos -= ataque),(pontos -= defesa),(pontos -= vida));
-            // console.log(pontosFinal);
-            pontosElemento.innerHTML = pontosFinal;
+            pontos = ((pontos -= ataque),(pontos -= defesa),(pontos -= vida));
+            pontosElemento.innerHTML = pontos;
             break;
         }
 
-        if(pontosFinal == 0){
-            // console.log('Acabaram seus pontos');
+        if(pontos == 0){
             ataqueInput.setAttribute('max', ataque);
             defesaInput.setAttribute('max', defesa);
             vidaInput.setAttribute('max', vida);
@@ -98,6 +97,7 @@ $(function(){
             vidaInput.setAttribute('max', '15');
         }
 
+        // Validação dos campos de valores de atributo após passar de nível
         var pontosLvUp = 5;
         var pontosLvUpElemento = document.getElementById('pontos-lvup');
 
@@ -111,12 +111,12 @@ $(function(){
         var vidaLvUpInput = document.getElementById('vida-lvup');
 
         while(ataqueLvUp <= 5 || defesaLvUp <= 5 || vidaLvUp <= 5){
-            var pontosFinal = ((pontosLvUp -= ataqueLvUp),(pontosLvUp -= defesaLvUp),(pontosLvUp -= vidaLvUp));
-            pontosLvUpElemento.innerHTML = pontosFinal;
+            pontosLvUp = ((pontosLvUp -= ataqueLvUp),(pontosLvUp -= defesaLvUp),(pontosLvUp -= vidaLvUp));
+            pontosLvUpElemento.innerHTML = pontosLvUp;
             break;
         }
 
-        if(pontosFinal == 0){
+        if(pontosLvUp == 0){
             ataqueLvUpInput.setAttribute('max', ataqueLvUp);
             defesaLvUpInput.setAttribute('max', defesaLvUp);
             vidaLvUpInput.setAttribute('max', vidaLvUp);
@@ -162,8 +162,7 @@ $(function(){
 
     var robo = new Robo();
 
-    submit.addEventListener('click', function(event){
-        event.preventDefault();
+    function criaRobo(){
         var valor1 = document.getElementById('ataque').value;
         var valor2 = document.getElementById('defesa').value;
         var valor3 = document.getElementById('vida').value;
@@ -173,10 +172,24 @@ $(function(){
         robo.vida = parseInt(valor3);
         robo.vidaInicial = parseInt(valor3);
         console.log(robo);
+    }
+
+    submit.addEventListener('click', function(event){
+        event.preventDefault();
+        console.log(pontos);
+        criaRobo();
+        // if (pontos == 0) {
+        //     criaRobo();
+        // };
+        // if (pontos > 0) {
+        //     console.log('Você ainda possui pontos para distribuir.');
+        // }
+        // if (pontos < 0) {
+        //     console.log('Você gastou mais pontos do que devia.');
+        // };
     });
 
-    submitLvUp.addEventListener('click', function(event){
-        event.preventDefault();
+    function upaPontosRobo(){
         var v1LvUp = document.getElementById('ataque-lvup').value;
         var v2LvUp = document.getElementById('defesa-lvup').value;
         var v3LvUp = document.getElementById('vida-lvup').value;
@@ -187,6 +200,11 @@ $(function(){
         robo.vidaInicial = robo.vidaInicial += parseInt(v3LvUp);
         console.log(robo);
         $('.stats-lvup').toggleClass('stats-atv');
+    }
+
+    submitLvUp.addEventListener('click', function(event){
+        event.preventDefault();
+        upaPontosRobo();
     });
 
     lutar.addEventListener('click', function(event){
@@ -203,7 +221,6 @@ $(function(){
             var rival = new Boss();
             console.log('Este é um chefão');
         }
-        // var rival = new RivalNv0();
         luta(robo,rival);
     });
 
