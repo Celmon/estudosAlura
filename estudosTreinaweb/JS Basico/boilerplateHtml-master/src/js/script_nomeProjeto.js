@@ -91,7 +91,13 @@ $(function(){
             ataqueInput.setAttribute('max', ataque);
             defesaInput.setAttribute('max', defesa);
             vidaInput.setAttribute('max', vida);
-        } else {
+            submit.setAttribute("class", "btn btn-block btn-primary");
+        }
+        if(pontos < 0){
+            alert('Você gastou pontos demais.');
+            submit.setAttribute("class", "btn btn-block btn-primary disabled");
+        }
+        if(pontos > 0) {
             ataqueInput.setAttribute('max', '15');
             defesaInput.setAttribute('max', '15');
             vidaInput.setAttribute('max', '15');
