@@ -1,0 +1,33 @@
+<script>
+    var habilidades = {
+        falar: function(fala){
+            console.log(fala);
+        }
+    }
+    var humano = {
+        __proto__: habilidades
+    }
+    habilidades.falar = function(fala){
+        console.log('Oitava sinfonia de Beethoven');
+    }
+    humano.falar('Ooooioaisodsadniujfbnsadifybiua');
+
+    var texto = {
+        exibe: function(texto){
+            console.log(texto);
+        }
+    }
+    var impressora = {}
+    impressora.__proto__ = texto;
+    impressora.exibe('Uhulanmoisdjnfos');
+
+    var jogo = {
+        falar: function(fala){
+            console.log(fala);
+        }
+    }
+
+    var ator = Object.create(jogo, {nome:{value:'Andre'}});
+
+    ator.falar('Oii... meu nome e '+ator.nome);
+</script>
