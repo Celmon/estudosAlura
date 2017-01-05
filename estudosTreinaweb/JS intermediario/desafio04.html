@@ -1,0 +1,28 @@
+<script>
+
+    /*var repete = function(){
+        while(q < 10){
+            q++;
+            console.log('Totozinho');
+        }
+    }
+    var quantidade = function(quantidade){
+        this.q = quantidade;
+    }
+    repete.call(quantidade(0));*/
+
+    var repete = function(q, t, f){
+        setTimeout(function(){
+            f(q);
+            if(q > 1){
+                repete(--q, t, f);
+            }
+        }, t);
+    }
+    
+    var i = function(q){
+        console.log(q+' Besta');
+    }
+    repete(5, 1000, i)
+
+</script>

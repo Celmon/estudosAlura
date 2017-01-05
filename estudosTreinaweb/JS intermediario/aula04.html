@@ -1,0 +1,35 @@
+<script>
+    /*var gerarRelatorio = function(saida){
+        var dados = 'Treinaweb Javascript';
+        saida(dados);
+    }
+    var imprimirNoTerminal = function(dados){
+        console.log(dados);
+    }
+    var imprimirNaTela = function(dados){
+        document.write(dados);
+    }
+    gerarRelatorio(function(dados){
+        alert(dados);
+    });*/
+
+    var Carro = function(){
+        console.log(this);
+    }
+
+    var falar = function(){
+        console.log(this);
+    }
+
+    var pessoa = { nome:'Supimpa' };
+    var pessoa2 = { nome:'Formozura' };
+
+    carro = new Carro();
+
+    // falar();
+    falar.call(pessoa);
+    falar.apply(pessoa2);
+
+    // O this serve para referenciar uma instancia de Objeto.
+
+</script>
