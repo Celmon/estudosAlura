@@ -1,0 +1,25 @@
+<script>
+    var usuariosCadastrados = {
+            conta: 567987,
+            saldo: 120
+    };
+
+    var saque = function(conta, valor){
+        if(conta == usuariosCadastrados.conta){
+            console.log('Sua conta esta certa');
+            if(valor <= usuariosCadastrados.saldo){
+                console.log('Voce tem dinheiro o suficiente para sacar essa quantia');
+            }else{
+                throw new Error('Voce esta tentando sacar mais dinheiro do que possui em conta');
+            }
+        }else{
+            throw new Error('Porra deu ruim mano, mano deu ruim');
+        }
+    };
+    
+    try{
+        saque(567987, 500);
+    } catch(e){
+        console.log(e.message);
+    }
+</script>
