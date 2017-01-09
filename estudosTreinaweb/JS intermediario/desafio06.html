@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="user">
+        <input type="text" id="senha">
+        <input type="submit" id="submit" value="logar">
+        <input type="submit" id="cadastrar" value="Salvar dados">
+    </form>
+</body>
+
+<script>
+
+    console.log(localStorage.user);
+    console.log(localStorage.senha);
+
+    if(localStorage.user || localStorage.senha){
+        
+    } else {
+        console.log('não possuimos registros');
+    }
+
+    document.getElementById('submit').addEventListener('click', function(event){
+        event.preventDefault();
+        var user = document.getElementById('user').value;
+        var senha = document.getElementById('senha').value;
+        var userSalvo = localStorage.getItem('user');
+        var senhaSalvo = localStorage.getItem('senha');
+        if(userSalvo == user){
+            if(senha == senhaSalvo){
+                console.log('Parabéns você existe');
+            }
+        } else {
+            console.log('este usuário ainda não existe');
+        }
+    });
+
+    document.getElementById('cadastrar').addEventListener('click', function(event){
+        event.preventDefault();
+        var user = document.getElementById('user').value;
+        var senha = document.getElementById('senha').value;
+        localStorage.user = user;
+        localStorage.senha = senha;
+    });
+
+</script>
+
+</html>
+

@@ -10,7 +10,7 @@
             if(valor <= usuariosCadastrados.saldo){
                 console.log('Voce tem dinheiro o suficiente para sacar essa quantia');
             }else{
-                throw new Error('Voce esta tentando sacar mais dinheiro do que possui em conta');
+                throw new Error('Voce esta tentando sacar mais dinheiro do que possui em conta, voce apenas possui : ' + usuariosCadastrados.saldo + ' reais');
             }
         }else{
             throw new Error('Porra deu ruim mano, mano deu ruim');
