@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="nome">
+    <input type="submit" id="checar">
+    <script>
+        var nomes = [
+            { nome: 'Larry' },
+            { nome: 'Frodo' },
+            { nome: 'Hortom' }
+        ]
+        document.getElementById('checar').addEventListener('click', function(){
+            var nomeDigitado = document.getElementById('nome').value;
+            for(i in nomes){
+                if(nomes[i].nome == nomeDigitado){
+                    console.log('Achou o nome ' + nomes[i].nome);
+                    break;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
