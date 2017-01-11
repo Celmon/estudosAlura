@@ -43,3 +43,21 @@ body {
     }
   }
 }
+
+.txtErro,
+.txtSucess{
+  display: none;
+  padding: 10px 5px;
+  font-size: 12px;
+  text-align: center;
+  font-weight: bold;
+}
+.txtErro{
+  background-color: #f8eeee;
+  color: #ce1616;
+}
+.txtSucess{
+  background-color: #e1fce1;
+  color: #3b873f;
+}
+.ativo{ display: block; }

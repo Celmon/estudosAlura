@@ -1,0 +1,16 @@
+/* ==========================================================================
+   Login
+   ========================================================================== */
+
+#loginSnake{
+  position: absolute;
+  margin-top: calc(50vh - 220px);
+  margin-left: calc(50vw - 10%);
+  width: 20%;
+  padding: 20px 30px;
+  background-color: #f3f3f3;
+  border-radius: 7px;
+  h2{
+    margin-top: 0;
+  }
+}

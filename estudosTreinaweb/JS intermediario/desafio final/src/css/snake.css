@@ -10898,15 +10898,48 @@ body {
   font-size: 16px;
 }
 
+.txtErro,
+.txtSucess {
+  display: none;
+  padding: 10px 5px;
+  font-size: 12px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.txtErro {
+  background-color: #f8eeee;
+  color: #ce1616;
+}
+
+.txtSucess {
+  background-color: #e1fce1;
+  color: #3b873f;
+}
+
+.ativo {
+  display: block;
+}
+
 /* ==========================================================================
    Botoes
    ========================================================================== */
 /* ==========================================================================
    Index
    ========================================================================== */
-.loginSnake {
+/* ==========================================================================
+   Login
+   ========================================================================== */
+#loginSnake {
   position: absolute;
-  margin-top: calc(40vh - 200px);
+  margin-top: calc(50vh - 220px);
   margin-left: calc(50vw - 10%);
   width: 20%;
+  padding: 20px 30px;
+  background-color: #f3f3f3;
+  border-radius: 7px;
+}
+
+#loginSnake h2 {
+  margin-top: 0;
 }

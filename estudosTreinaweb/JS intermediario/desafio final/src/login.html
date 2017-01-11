@@ -23,32 +23,25 @@
 </head>
 <body>
     <main>
-        <header class="headerSnake">
-            <div class="row">
-                <article class="col-xs-12 col-sm-2 ptn" id="recorde">
-                    <h2>Recorde</h2>
-                    <div>
-                        <p>Feito por:</p>
-                        <h3>Usuário</h3>
-                    </div>
-                    <div>
-                        <h3 class="pontos">999.999</h3>
-                    </div>
-                </article>
-                <div class="col-xs-12 col-sm-8 msg">
-                </div>
-                <article class="col-xs-12 col-sm-2 ptn" id="atual">
-                    <h2>Placar Atual</h2>
-                    <div>
-                        <p>Feito por:</p>
-                        <h3 id="user">Usuário</h3>
-                    </div>
-                    <div>
-                        <h3 class="pontos">xxx.xxx</h3>
-                    </div>
-                </article>
-            </div>
-        </header>
+        <form id="loginSnake">
+            <h2>Faça seu login</h2>
+            <p class="txtErro">não</p>
+            <p class="txtSucess">sim</p>
+            <fieldset class="form-group">
+                <label for="usuario">Usuário:</label>
+                <input type="text" class="form-control" id="usuario" placeholder="usuario" required="required">
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="text" class="form-control" id="senha" placeholder="senha" required="required">
+            </fieldset>
+            <fieldset class="form-group">
+                <input type="submit" value="Enviar" class="btn btn-primary" id="btnEnviar">
+                <input type="submit" value="Cadastrar" class="btn btn-success pull-right" id="btnCadastrar">
+            </fieldset>
+            <p><a href="#" id="convidado">Logar como convidado</a></p>
+            <p><a href="#" id="novaSenha">Esqueci minha senha</a></p>
+        </form>
     </main>
      <!-- build:js js/libs_snake_rodape.js -->
      <script src="js/jquery.js"></script>
