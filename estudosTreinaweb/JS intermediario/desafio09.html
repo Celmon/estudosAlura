@@ -15,11 +15,20 @@
         ]
         document.getElementById('checar').addEventListener('click', function(){
             var nomeDigitado = document.getElementById('nome').value;
+            var valor = false;
+            function parabens(){
+                console.log('Parabéns, o nome ' + nomeDigitado + ' existe!! ');
+            };
             for(i in nomes){
                 if(nomes[i].nome == nomeDigitado){
-                    console.log('Achou o nome ' + nomes[i].nome);
+                    valor = true;
                     break;
                 }
+            }
+            if (valor === false){
+                console.log('Este nome não existe.');
+            } else {
+                parabens();
             }
         });
     </script>

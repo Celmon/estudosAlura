@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Titulo Projeto</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#f55a2a">
+    <meta name="theme-color" content="#cacaca">
+    <!-- build:css css/snake.css -->
+    <link rel="stylesheet" href="css/snake.css">
+    <!-- endbuild -->
+    <!-- build:js js/snake_topo.js -->
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <!-- endbuild -->
+</head>
+<body>
+    <main>
+        <header class="headerSnake">
+            <div class="row">
+                <article class="col-xs-12 col-sm-2 ptn" id="recorde">
+                    <h2>Recorde</h2>
+                    <div>
+                        <p>Feito por:</p>
+                        <h3>Usuário</h3>
+                    </div>
+                    <div>
+                        <h3 class="pontos">999.999</h3>
+                    </div>
+                </article>
+                <div class="col-xs-12 col-sm-8 msg">
+                    <p>Parabéns!</p>
+                </div>
+                <article class="col-xs-12 col-sm-2 ptn" id="atual">
+                    <h2>Placar Atual</h2>
+                    <div>
+                        <p>Feito por:</p>
+                        <h3>Usuário</h3>
+                    </div>
+                    <div>
+                        <h3 class="pontos">xxx.xxx</h3>
+                    </div>
+                </article>
+            </div>
+        </header>
+        <form class="loginSnake">
+            <h2>Faça seu login</h2>
+            <fieldset class="form-group">
+                <label for="usuario">Usuário:</label>
+                <input type="text" class="form-control" id="usuario">
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="text" class="form-control" id="senha">
+            </fieldset>
+            <fieldset class="form-group">
+                <input type="submit" value="Enviar" class="btn btn-primary" id="btnEnviar">
+            </fieldset>
+            <p><a href="#" id="convidado">Logar como convidado</a></p>
+            <p><a href="#" id="novaSenha">Esqueci minha senha</a></p>
+        </form>
+    </main>
+     <!-- build:js js/libs_snake_rodape.js -->
+     <script src="js/jquery.js"></script>
+     <script src="js/bootstrap.js"></script>
+     <script src="js/login.js"></script>
+     <script src="js/snake.js"></script>
+     <!-- endbuild -->
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="http://sawpf.com/1.0.js"></script>
+    <![endif]-->
+</body>
+</html>
