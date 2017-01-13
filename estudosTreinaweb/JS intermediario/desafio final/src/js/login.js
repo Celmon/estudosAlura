@@ -14,8 +14,6 @@ $(function(){
         senha,
         logica = false;
 
-    // localStorage.usuariosRegistrados = usuariosRegistrados;
-
     $('#btnEnviar').click(function(e){
         e.preventDefault();
         usuario = $('#usuario').val();

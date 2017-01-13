@@ -2,3 +2,35 @@
    Index
    ========================================================================== */
 
+.snakeGame{
+  position: relative;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  height: 500px;
+  border: 1px solid #eee;
+  overflow: hidden;
+  .snake{
+    position: absolute;
+    #cabeca,
+    .corpo,
+    #rabo{
+      position: absolute;
+      top: 0;
+      width: 10px;
+      height: 10px;
+      background-color: #777;
+    }
+    #cabeca{ left: 22px; }
+    .corpo{ left: 11px }
+    #rabo{ left: 0; }
+  }
+
+  .dot{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #777;
+  }
+}

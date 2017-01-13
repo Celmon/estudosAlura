@@ -10898,6 +10898,10 @@ body {
   font-size: 16px;
 }
 
+.headerSnake #user {
+  text-transform: capitalize;
+}
+
 .txtErro,
 .txtSucess {
   display: none;
@@ -10927,6 +10931,50 @@ body {
 /* ==========================================================================
    Index
    ========================================================================== */
+.snakeGame {
+  position: relative;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  height: 500px;
+  border: 1px solid #eee;
+  overflow: hidden;
+}
+
+.snakeGame .snake {
+  position: absolute;
+}
+
+.snakeGame .snake #cabeca,
+.snakeGame .snake .corpo,
+.snakeGame .snake #rabo {
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #777;
+}
+
+.snakeGame .snake #cabeca {
+  left: 22px;
+}
+
+.snakeGame .snake .corpo {
+  left: 11px;
+}
+
+.snakeGame .snake #rabo {
+  left: 0;
+}
+
+.snakeGame .dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #777;
+}
+
 /* ==========================================================================
    Login
    ========================================================================== */
