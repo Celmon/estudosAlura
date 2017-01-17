@@ -1,0 +1,10 @@
+<script>
+    var mutant = function(){
+        console.log('Mutant1');
+        mutant = function(){
+            console.log('Mutant2');
+        }
+    }
+    mutant();
+    mutant();
+</script>

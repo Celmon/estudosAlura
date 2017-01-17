@@ -1,0 +1,46 @@
+<script>
+    var sum = function(value1, value2){
+        if(value1 && value2){
+            return value1 + value2;
+        }
+        if(value1){
+            var oldValue1 = value1;
+            return function(value2){
+                return oldValue1 + value2;
+            }
+        }
+    }
+    var multiplication = function(value1, value2){
+        if(value1 && value2){
+            return value1 * value2;
+        }
+        if(value1){
+            var oldValue1 = value1;
+            return function(value2){
+                return oldValue1 * value2;
+            }
+        }
+    }
+    var subtraction = function(value1, value2){
+        if(value1 && value2){
+            return value1 - value2;
+        }
+        if(value1){
+            var oldValue1 = value1;
+            return function(value2){
+                return oldValue1 - value2;
+            }
+        }
+    }
+    var division = function(value1, value2){
+        if(value1 && value2){
+            return value1 / value2;
+        }
+        if(value1){
+            var oldValue1 = value1;
+            return function(value2){
+                return oldValue1 / value2;
+            }
+        }
+    }
+</script>

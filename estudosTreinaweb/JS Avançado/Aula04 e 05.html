@@ -1,0 +1,42 @@
+<script>
+    /*var usuario = function(user){
+        var key = JSON.stringify(user);
+        if(!usuario.cache[key]){
+            // console.log(user.name);
+            usuario.cache[key] = user.name, 
+                                 user.senha;
+            console.log(user.name, user.senha);
+        } else {
+            console.log(usuario.cache[key]);
+        }
+        //return usuario.cache[key];
+    }
+    usuario.cache = {}*/
+
+    var createUser = function(params){
+        if(params.name && params.age && params.password && params.email){
+            params.success({name:params.name, age:params.age});
+        }else{
+            params.error({message:"Erro ao cadastrar"});
+        }
+    }
+
+    // usuario({
+    //     name: 'Tobias',
+    //     senha: 123
+    // })
+
+    /*var testeCache = function(base){
+        if(!testeCache.cache[base]){
+            setTimeout(function(){
+                var area = base * base;
+                testeCache.cache[base] = area;
+                console.log(area);
+            }, 5000);
+        } else{
+            console.log(testeCache.cache[base]);
+        }
+    }
+    testeCache.cache = {}*/
+
+</script>
