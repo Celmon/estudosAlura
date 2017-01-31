@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Desafio 09</title>
+  <style>
+    body{ text-align: center; }
+    form{
+      margin-right: auto;
+      margin-left: auto;
+      width: 60%;
+    }
+    form input,
+    form textarea{
+      margin-bottom: 20px;
+      width: 100%;
+      border: 1px solid #888888;
+    }
+    form textarea{ max-width: 100%; }
+  </style>
+</head>
+<body>
+  <h4>Relatorio</h4>
+  <form id="reportForm">
+    <input id="reportForm_title" type="text" placeholder="titulo">
+    <br>
+    <textarea id="reportForm_text" rows="10" cols="22"></textarea>
+    <br>
+    <input id="reportForm_submit" type="submit" value="Imprimir">
+  </form>
+
+  <script>
+    var pegaDados = function(){
+      var titulo = document.getElementById('reportForm_title').value;
+      var conteudo = document.getElementById('reportForm_text').value;
+      return {
+        titulo: titulo,
+        conteudo: conteudo
+      }
+    }
+    var print = function(dados){
+      alert("Sua mensagem foi enviada com sucesso, com o título de :" + dados.titulo);
+    }
+    document.getElementById('reportForm_submit').addEventListener('click', function(event){
+      event.preventDefault();
+      print(pegaDados());
+    });
+  </script>
+</body>
+</html>
