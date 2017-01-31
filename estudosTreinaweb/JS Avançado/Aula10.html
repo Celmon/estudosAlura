@@ -8,6 +8,8 @@
             email: "Joaquim@email.com",
             endereco: "Rua Joaquim"
         }
+
+        // Este
         return{
             getPessoaDetalhes: function(){
                 detalhes.nome;
@@ -18,5 +20,16 @@
                 detalhes.endereco;
             }
         }
+
+        // Ou Este
+        this.getPessoaDetalhes = function(){
+            detalhes.nome;
+            detalhes.sexo;
+            detalhes.altura;
+            detalhes.peso;
+            detalhes.email;
+            detalhes.endereco;
+        }
+
     })();
 </script>
