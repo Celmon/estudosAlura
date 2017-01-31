@@ -1,0 +1,44 @@
+<script>
+    
+    var Sandbox = function(){
+        var argumentsArray = Array.prototype.slice.call(arguments);
+        var callback = argumentsArray.pop();
+        var orderedModules = argumentsArray.pop();
+
+        if(this instanceof Sandbox){
+            new Sandbox(orderedModules, callback);
+        }
+
+        var modules = {};
+        for(index in orderedModules){
+            modules[orderedModules[index]] = Sandbox.modules[orderedModules[index]];
+        }
+        callback(modules);
+    }
+
+    Sandbox.modules = {};
+
+    Sandbox.modules.validator = (function(){
+        var isValidString = function(value){
+            return typeof value === "string";
+        }
+        return {
+            isValidString: isValidString
+        }
+    })();
+    Sandbox.modules.User = function(name){
+        this.name = name;
+    }
+
+    Sandbox(["validator","User"], function(modules){
+        var validator = modules.validator;
+        var User = modules.User;
+
+        var name = "Jose";
+        if(modules.validator.isValidString(name)){
+            var user = new User(name);
+            console.log(user);
+        }
+    });
+
+</script>

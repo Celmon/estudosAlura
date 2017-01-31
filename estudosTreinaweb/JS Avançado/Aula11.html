@@ -1,0 +1,46 @@
+<script>
+    var MYAPP = {
+        models:{},
+        views:{},
+        controllers:{},
+        utils:{}
+    };
+    MYAPP.models.User = function(name, email, gender){
+        this.name = name;
+        this.email = email;
+        this.gender = gender;
+    };
+    MYAPP.controllers.userController = (function(User){
+        var user = new User('Brutus', 'brutus@naotememail.com', 'F');
+        return {
+            user: user
+        };
+    })(MYAPP.models.User);
+    MYAPP.utils.validator = (function(userController){
+        var isValidName = function(){
+            if(userController.user.name === 'Brutus'){
+                return true;
+            } else{
+                return false;
+            }
+        };
+        var isValidGender = function(){
+            if(userController.user.gender === 'F' || userController.user.gender === 'M'){
+                return true;
+            } else{
+                return false;
+            }
+        };
+        return {
+            isValidName: isValidName,
+            isValidGender: isValidGender
+        };
+    })(MYAPP.controllers.userController);
+    MYAPP.views.print = (function(user, validator){
+        if(validator.isValidName() && validator.isValidGender()){
+            console.log('Seu nome: ' + user.user.name + ', seu email: ' + user.user.email + ', seu sexo: ' + user.user.gender);
+        } else{
+            console.log('Algo errado aconteceu');
+        }
+    })(MYAPP.controllers.userController, MYAPP.utils.validator);
+</script>
