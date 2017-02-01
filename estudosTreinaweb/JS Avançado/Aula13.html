@@ -1,0 +1,54 @@
+<script>
+    var Sandbox = function(){
+        var argumentsArray = Array.prototype.slice.call(arguments);
+        var callback = argumentsArray.pop();
+        var orderedModules = argumentsArray.pop();
+
+        if(this instanceof Sandbox){
+            new Sandbox(orderedModules, callback);
+        }
+
+        var modules = [];
+        for(index in orderedModules){
+            modules.push(Sandbox.modules[orderedModules[index]]);
+        }
+        callback.apply(undefined ,modules);
+    };
+
+    Sandbox.modules = {};
+
+    Sandbox.modules.instrument = [
+        'Piano',
+        'Violin',
+        'Saxofone',
+        'Flute',
+        'Gaita'
+    ];
+
+    Sandbox(['instrument'], function(instrument){
+        Sandbox.modules.Father = function(){
+            var instrumento = instrument[Math.floor(Math.random() * instrument.length)];
+            this.has = instrumento;
+        };
+
+        Sandbox.modules.Mother = function(){
+            var instrumento = instrument[Math.floor(Math.random() * instrument.length)];
+            this.knowsHowToPlay = instrumento;
+        };
+    });
+
+    Sandbox(['Mother','Father'], function(Mother, Father){
+        Sandbox.modules.Son = function(name){
+            this.name = name;
+            Father.call(this);
+            Mother.call(this);
+        };
+    });
+
+    Sandbox(['Son'], function(Son){
+        console.log(new Son('Tromboso'));
+        console.log(new Son('Rockford'));
+        console.log(new Son('April'));
+        console.log(new Son('Footlose'));
+    });
+</script>
