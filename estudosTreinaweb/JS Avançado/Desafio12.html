@@ -1,0 +1,47 @@
+<script>
+    var Sandbox = function(){
+        var argumentsArray = Array.prototype.slice.call(arguments);
+        var callback = argumentsArray.pop(); // Callback é a função que vc ta chamando lá em baixo dentro dos parametros de Sandbox
+        var orderedModules = argumentsArray.pop(); // São os modulos passados no Array
+
+        if(this instanceof Sandbox){
+            new Sandbox(orderedModules, callback); // Cria uma nova instância de Sandbox caso ela não exista ou não tenham colocado o new na hora de chama-la
+        }
+
+        var modules = {};
+
+        for(index in orderedModules){
+            modules[orderedModules[index]] = Sandbox.modules[orderedModules[index]];
+        }
+        callback(modules);
+    };
+
+    Sandbox.modules = {};
+
+    Sandbox.modules.validator = (function(){
+        var isValidString = function(name){
+            return typeof name === "string";
+        }
+        return {
+            isValidString: isValidString
+        }
+    })();
+
+    Sandbox.modules.User = function(name){
+        this.name = name;
+    };
+
+    Sandbox.modules.settings = (function(){
+        return true;
+    })();
+
+    Sandbox(['validator', 'User', 'settings'], function(modules){
+        var name = "Jose";
+
+        if(modules.validator.isValidString(name)){
+            var user = new modules.User(name);
+            console.log(user);
+            console.log(modules.settings);
+        }
+    });
+</script>
