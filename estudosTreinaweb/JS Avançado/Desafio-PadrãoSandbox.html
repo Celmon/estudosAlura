@@ -8,12 +8,12 @@
             new Sandbox(orderedModules, callback); // Cria uma nova instância de Sandbox caso ela não exista ou não tenham colocado o new na hora de chama-la
         }
 
-        var modules = {};
+        var modules = [];
 
         for(index in orderedModules){
-            modules[orderedModules[index]] = Sandbox.modules[orderedModules[index]];
+            modules.push(Sandbox.modules[orderedModules[index]]);
         }
-        callback(modules);
+        callback.apply(undefined ,modules);
     };
 
     Sandbox.modules = {};
@@ -35,13 +35,13 @@
         return true;
     })();
 
-    Sandbox(['validator', 'User', 'settings'], function(modules){
+    Sandbox(['validator', 'User', 'settings'], function(validator, User, settings){
         var name = "Jose";
 
-        if(modules.validator.isValidString(name)){
-            var user = new modules.User(name);
+        if(validator.isValidString(name)){
+            var user = new User(name);
             console.log(user);
-            console.log(modules.settings);
+            console.log(settings);
         }
     });
 </script>
