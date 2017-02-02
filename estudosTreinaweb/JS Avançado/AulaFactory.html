@@ -1,0 +1,52 @@
+<script>
+    var FoodMaker = function (){};
+
+    FoodMaker.prototype.getTotalIngredients = function(){
+        for(index in this.ingredients){
+            var ingredient = this.ingredients[index];
+            console.log(ingredient);
+        }
+        console.log(this.ingredients.length);
+    }
+
+    FoodMaker.factory = function(type){
+        var constructor = type,
+            food;
+
+        if(typeof FoodMaker[constructor] !== 'function'){
+            throw {
+            message: constructor + ' doesn\'t  exist'
+            }
+        }
+
+        if(typeof FoodMaker[constructor].prototype.getTotalIngredients !== 'function'){
+            FoodMaker[constructor].prototype = new FoodMaker();
+        }
+
+        food = new FoodMaker[constructor]();
+
+        return food;
+    }
+
+    FoodMaker.Cake = function(){
+        this.ingredients = [
+            'egg',
+            'butter',
+            'flour',
+            'sugar'
+        ]
+    }
+
+    FoodMaker.Lasagna = function(){
+        this.ingredients = [
+            'pasta',
+            'tomato sauce',
+            'cheese',
+            'ham'
+        ]
+    }
+
+    var cake = FoodMaker.factory('Cake');
+
+    cake.getTotalIngredients();
+</script>

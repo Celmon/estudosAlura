@@ -1,0 +1,110 @@
+<script>
+    var CharacterCreator = function (){};
+
+    CharacterCreator.prototype.skillsInspector = function(){
+        console.log(this.name.italics());
+        for(index in this.skills){
+            var skill = this.skills[index];
+            console.log(skill);
+        }
+        console.log(' ');
+    };
+
+    CharacterCreator.born = function(type){
+        var constructor = type,
+            character;
+
+        if(typeof CharacterCreator[constructor] !== 'function'){
+            throw {
+            message: constructor + ' não existe'
+            }
+        }
+
+        if(typeof CharacterCreator[constructor].prototype.skillsInspector !== 'function'){
+            CharacterCreator[constructor].prototype = new CharacterCreator();
+        }
+
+        character = new CharacterCreator[constructor]();
+
+        return character;
+    }
+
+    CharacterCreator.FireWizard = function(){
+        this.name = 'Fire Wizard',
+        this.skills = [
+            'Fireball',
+            'Fire Rune',
+            'Fire Arrows',
+            'Sun light'
+        ]
+    }
+    CharacterCreator.IceWizard = function(){
+        this.name = 'Ice Wizard',
+        this.skills = [
+            'Ice Teeth',
+            'Ice Rune',
+            'Ice Armor',
+            'Snow'
+        ]
+    }
+    CharacterCreator.SupportWizzard = function(){
+        this.name = 'Support Wizzard',
+        this.skills = [
+            'Full Armor',
+            'Magic Shield',
+            'Light',
+            'High Speed'
+        ]
+    }
+    CharacterCreator.Cleric = function(){
+        this.name = 'Cleric',
+        this.skills = [
+            'Divine Bless',
+            'Healing',
+            'Health Boost',
+            'Magic Boost'
+        ]
+    }
+    CharacterCreator.Warrior = function(){
+        this.name = 'Warrior',
+        this.skills = [
+            'Shout',
+            'Block',
+            'Stun Target',
+            'Heavy Drop'
+        ]
+    }
+    CharacterCreator.Archer = function(){
+        this.name = 'Archer',
+        this.skills = [
+            'Arrows rain',
+            'Heavy Shot',
+            'Jump',
+            'Boost'
+        ]
+    }
+    CharacterCreator.Thief = function(){
+        this.name = 'Thief',
+        this.skills = [
+            'Backstab',
+            'Invisibility',
+            'High Speed',
+            'Dual Hit'
+        ]
+    }
+
+    var fireWizard = CharacterCreator.born('FireWizard');
+    fireWizard.skillsInspector();
+
+    var cleric = CharacterCreator.born('Cleric');
+    cleric.skillsInspector();
+
+    var warrior = CharacterCreator.born('Warrior');
+    warrior.skillsInspector();
+
+    var warrior2 = CharacterCreator.born('Warrior');
+    warrior2.skillsInspector();
+
+    var archer = CharacterCreator.born('Archer');
+    archer.skillsInspector();
+</script>
