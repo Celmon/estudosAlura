@@ -1,0 +1,20 @@
+<script>
+    function Singleton(){
+
+        this.value = "TreinaWeb";
+
+        var instance = this;
+
+        Singleton = function(){
+            return instance;
+        }
+
+    }
+
+    var foo = new Singleton();
+    var bar = new Singleton();
+    var baz = Singleton.instance;
+
+    console.log(foo == bar);
+    console.log(bar === baz);
+</script>
