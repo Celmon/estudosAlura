@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<section>
+		<form action="">
+			<input id="cep" type="text" placeholder="CEP">
+			<input id="cidade" type="text" placeholder="cidade">
+			<input id="bairro" type="text" placeholder="bairro">
+			<input id="logradouro" type="text" placeholder="logradouro">
+			<input id="estado" type="text" placeholder="estado">
+		</form>
+	</section>
+	<script src="jquery.js"></script>
+	<script>
+	$(document).ready(function(){
+		$('#cep').on('blur', function(event){
+			var cep = $(event.target).val();
+			$.get('http://api.postmon.com.br/v1/cep'+cep+'?format=json', function(data){
+				console.log(data);
+				$('#cidade').val(data.cidade);
+				$('#bairro').val(data.bairro);
+				$('#logradouro').val(data.logradouro);
+				$('#estado').val(data.estado);
+			});
+		});
+	});
+	</script>
+</body>
+</html>
