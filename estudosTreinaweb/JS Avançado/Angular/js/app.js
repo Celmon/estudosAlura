@@ -1,0 +1,1 @@
+var SaiaVermelha = angular.module('SaiaVermelha',[]);
