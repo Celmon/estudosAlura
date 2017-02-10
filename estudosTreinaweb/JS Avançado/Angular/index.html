@@ -10,7 +10,78 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
 </head>
 <body ng-controller="ManoController">
-    {{appName}}
+    
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">SaiaVermelha</a>
+                <p class="navbar-text">
+                    <span class="text-gray">{{money.incomings.total | currency:"R$"}}</span> 
+                    -
+                    <span class="text-red">{{money.expenses.total | currency:"R$"}}</span>
+                    =
+                    {{money.total | currency:"R$"}}
+                    <span class="label label-success">{{money.saved + "%"}}</span>
+                </p>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid geral">
+        <form action="" ng-submit="new()">
+            <h4>
+                Cadastrar novo
+                <div class="btn-group" role="group">
+                    <button type="button" ng-click="type='incoming'" ng-class="{'active': type == 'incoming'}" class="btn btn-default btn-sm">Ganho</button>
+                    <button type="button" ng-click="type='expense'" ng-class="{'active': type == 'expense'}" class="btn btn-default btn-sm">Gasto</button>
+                </div>
+            </h4>
+            <div class="form-group">
+                <div class="input-group col-xs-4">
+                    <span class="input-group-addon" id="basic-addon2">Valor</span>
+                    <input type="number" ng-model="value" class="form-control">
+                </div>
+                <div class="input-group col-xs-4">
+                    <span class="input-group-addon" id="basic-addon2">Nome</span>
+                    <input type="text" ng-model="name" class="form-control">
+                </div>
+                <div class="input-group col-xs-2">
+                    <input type="submit" value="Cadastrar" class="form-control" id="submit">
+                </div>
+            </div>
+        </form>
+
+        <div role="tabpanel">
+
+			<ul class="nav nav-tabs" role="tablist">
+				<li role="presentation" class="active"><a href="#expenses" aria-controls="expenses" role="tab" data-toggle="tab">Gastos</a></li>
+				<li role="presentation"><a href="#incomings" aria-controls="incomings" role="tab" data-toggle="tab">Ganhos</a></li>
+			</ul>
+
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="expenses">
+					<div class="list-group">
+						<a ng-repeat="expense in money.expenses.values" class="list-group-item">
+							<span ng-click="deleteExpense(expense)" class="badge cursor-pointer delete">Deletar</span>
+							{{expense.name}}
+							<span class="text-gray">{{expense.value | currency:"R$"}}</span>
+						</a>
+					</div>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="incomings">
+					<div class="list-group">
+						<a ng-repeat="incoming in money.incomings.values" class="list-group-item">
+						   	<span ng-click="deleteIncoming(incoming)" class="badge cursor-pointer delete">Deletar</span>
+							{{incoming.name}}
+							<span class="text-gray">{{incoming.value | currency:"R$"}}</span>
+						</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+    </div>
+
     <script src="js/app.js"></script>
     <script src="js/services/ManoService.js"></script>
     <script src="js/controllers/ManoController.js"></script>

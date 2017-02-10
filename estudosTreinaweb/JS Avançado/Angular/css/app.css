@@ -1,0 +1,14 @@
+.geral{
+    padding-top: 120px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.text-gray{
+    /*font-weight: bold;*/
+    color: #aaa;
+}
+.text-red{
+    /*font-weight: bold;*/
+    color: mediumvioletred;
+}
